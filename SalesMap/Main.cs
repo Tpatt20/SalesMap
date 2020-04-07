@@ -617,7 +617,7 @@ namespace SalesMap
             repEmail.Click += repEmail_Click;
 
             MenuItem SIMEmail = new MenuItem();
-            SIMEmail.Text = "Email to SIM admin";
+            SIMEmail.Text = "Email to Sales Manager";
             SIMEmail.Click += SIMEmail_Click;
 
             ContextMenu contextMenu = new ContextMenu();
@@ -908,7 +908,7 @@ namespace SalesMap
             messageRSMs.Click += MessageRSMs_Click;
 
             MenuItem messageSIMadmin = new MenuItem();
-            messageSIMadmin.Text = "Message SIM Admin(s)";
+            messageSIMadmin.Text = "Message Sales Managers";
             messageSIMadmin.Click += MessageSIMadmin_Click;
 
             MenuItem message = new MenuItem();
@@ -994,6 +994,29 @@ namespace SalesMap
             info.FileName = "cmd.exe";
             Process.Start(info);
         }
+    private void labelRepResult_Click(object sender, EventArgs e)
+        {
+            Common.Stat();
+
+            string temp = labelRepResult.Text;
+            string copy = Common.RemoveSpecial(temp.Substring(temp.IndexOf(": ") + 2));
+
+            try
+            {
+                Clipboard.SetText(copy);
+                labelRepResult.Text = "Contact: COPIED!";
+                Common.Log("Clicked first Sales Rep email and set clipboard to \"" + copy + "\"");
+            }
+            catch (Exception ex)
+            {
+                Common.Log("Attempted to set the clipboard text and failed (Exception: " + ex.Message + ")");
+                labelRepResult.Text = "Contact: FAILED TO COPY...TRY AGAIN";
+            }
+
+            Application.DoEvents();
+            Thread.Sleep(750);
+            labelRepResult.Text = temp;
+        }
 
         private void labelContactResult_Click(object sender, EventArgs e)
         {
@@ -1018,7 +1041,7 @@ namespace SalesMap
             Thread.Sleep(750);
             labelContactResult.Text = temp;
         }
-
+       
         private void labelPhoneResult_Click(object sender, EventArgs e)
         {
             Common.Stat();
@@ -1041,6 +1064,29 @@ namespace SalesMap
             Application.DoEvents();
             Thread.Sleep(750);
             labelPhoneResult.Text = temp;
+        }
+        private void labelRepResult2_Click(object sender, EventArgs e)
+        {
+            Common.Stat();
+
+            string temp = labelRepResult2.Text;
+            string copy = Common.RemoveSpecial(temp.Substring(temp.IndexOf(": ") + 2));
+
+            try
+            {
+                Clipboard.SetText(copy);
+                labelRepResult2.Text = "Contact: COPIED!";
+                Common.Log("Clicked first Sales Rep email and set clipboard to \"" + copy + "\"");
+            }
+            catch (Exception ex)
+            {
+                Common.Log("Attempted to set the clipboard text and failed (Exception: " + ex.Message + ")");
+                labelRepResult2.Text = "Contact: FAILED TO COPY...TRY AGAIN";
+            }
+
+            Application.DoEvents();
+            Thread.Sleep(750);
+            labelRepResult2.Text = temp;
         }
 
         private void labelContactResult2_Click(object sender, EventArgs e)

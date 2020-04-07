@@ -150,14 +150,14 @@
             // 
             // linkLabelTrelloBoard
             // 
-            this.linkLabelTrelloBoard.AutoSize = true;
-            this.linkLabelTrelloBoard.Location = new System.Drawing.Point(13, 230);
-            this.linkLabelTrelloBoard.Name = "linkLabelTrelloBoard";
-            this.linkLabelTrelloBoard.Size = new System.Drawing.Size(101, 13);
-            this.linkLabelTrelloBoard.TabIndex = 17;
-            this.linkLabelTrelloBoard.TabStop = true;
-            this.linkLabelTrelloBoard.Text = "Development Board";
-            this.linkLabelTrelloBoard.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTrelloBoard_LinkClicked);
+            //this.linkLabelTrelloBoard.AutoSize = true;
+            //this.linkLabelTrelloBoard.Location = new System.Drawing.Point(13, 230);
+            //this.linkLabelTrelloBoard.Name = "linkLabelTrelloBoard";
+            //this.linkLabelTrelloBoard.Size = new System.Drawing.Size(101, 13);
+            //this.linkLabelTrelloBoard.TabIndex = 17;
+            //this.linkLabelTrelloBoard.TabStop = true;
+            //this.linkLabelTrelloBoard.Text = "Development Board";
+            //this.linkLabelTrelloBoard.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTrelloBoard_LinkClicked);
             // 
             // About
             // 

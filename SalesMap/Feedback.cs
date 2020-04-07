@@ -21,7 +21,7 @@ namespace SalesMap
 
         private void buttonFeedback_Click(object sender, EventArgs e)
         {
-            Process.Start("mailto:derek.antrican@sigmanest.com&Subject=SalesMap%20Feedback");
+            Process.Start("mailto:trent.patterson@sigmanest.com?Subject=SalesMap%20Feedback");
             this.Close();
         }
 
@@ -43,7 +43,7 @@ namespace SalesMap
             showSubmissionForm();
         }
 
-        private void showSubmissionForm()
+       private void showSubmissionForm()
         {
             if (textBox.Visible == false)
             {
@@ -78,12 +78,12 @@ namespace SalesMap
             }
             else if (feature)
             {
-                sendEmail(subject + " #Feature");
+               sendEmail(subject + " #Feature");
 
                 MessageBox messageFeature = new MessageBox("Added to Trello!", "Your feature request has been added to the SalesMap Trello board!", "Go to Trello", Common.MessageBoxResult.Yes, true, "OK", Common.MessageBoxResult.OK);
-                messageFeature.ShowDialog();
+               messageFeature.ShowDialog();
 
-                if (Common.DialogResult == Common.MessageBoxResult.Yes)
+              if (Common.DialogResult == Common.MessageBoxResult.Yes)
                     Process.Start("https://trello.com/b/mvRhnwaF/salesmap");
 
                 this.Close();
@@ -96,8 +96,7 @@ namespace SalesMap
             {
                 Outlook.Application outlookApp = new Outlook.Application();
                 Outlook.MailItem mailItem = (Outlook.MailItem)outlookApp.CreateItem(Outlook.OlItemType.olMailItem);
-                mailItem.To = "derekantrican+jtqvwnmoer0jrzmbktqy@boards.trello.com";
-                mailItem.BCC = "derek.antrican@sigmanest.com";
+                mailItem.To = "Trent.patterson@sigmanest.com";
                 mailItem.Body = "Submitted by " + Environment.UserName;
                 mailItem.Subject = subject;
                 mailItem.Send();
